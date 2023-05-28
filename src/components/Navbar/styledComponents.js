@@ -10,10 +10,13 @@ export const NavBar = styled.nav`
   justify-content: space-between;
   align-items: center;
 
-  padding: 10px 30px 10px 30px;
+  padding: 10px 10px 10px 10px;
+  @media (min-width: 768px) {
+    padding: 10px 30px 10px 30px;
+  }
 `
 export const WebsiteLogo = styled.img`
-  height: 30px;
+  height: 25px;
 `
 
 export const MenuContainer = styled.div`

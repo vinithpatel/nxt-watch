@@ -4,7 +4,8 @@
 }
 
 .side-bar-nav-items-container {
-  padding-left: 0px;
+  padding-left: 10px;
+
   list-style-type: none;
 
   width: 100%;

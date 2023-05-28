@@ -1,4 +1,64 @@
 .home-bg-container {
   width: 100vw;
   height: 93vh;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.home-container {
+  width: 100%;
+  height: 100%;
+}
+
+.premium-view-container {
+  height: 200px;
+  width: 100%;
+  padding: 20px;
+
+  background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png');
+  background-size: cover;
+}
+
+.premium-view-website-logo {
+  height: 30px;
+}
+
+.premium-view-para {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #0f0f0f;
+}
+
+.get-it-button {
+  background-color: transparent;
+
+  width: 120px;
+  height: 30px;
+  margin-top: 20px;
+
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+
+  cursor: pointer;
+  outline: none;
+}
+
+.premium-view-logo-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.premium-view-cancel-button {
+  background-color: transparent;
+  font-size: 20px;
+  border-width: 0px;
+
+  cursor: pointer;
+  outline: none;
 }
