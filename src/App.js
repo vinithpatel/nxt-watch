@@ -13,9 +13,13 @@ class App extends Component {
     activeTheme: 'LIGHT',
   }
 
-  updateToLightTheme = () => {}
+  updateToLightTheme = () => {
+    this.setState({activeTheme: 'LIGHT'})
+  }
 
-  updateToDarkTheme = () => {}
+  updateToDarkTheme = () => {
+    this.setState({activeTheme: 'DARK'})
+  }
 
   render() {
     const {activeTheme} = this.state
