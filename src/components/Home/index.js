@@ -1,5 +1,8 @@
 import {Component} from 'react'
 import Navbar from '../Navbar'
+import Sidebar from '../Sidebar'
+
+import './index.css'
 
 class Home extends Component {
   render() {
@@ -10,6 +13,9 @@ class Home extends Component {
     return (
       <>
         <Navbar />
+        <div className="home-bg-container">
+          <Sidebar />
+        </div>
       </>
     )
   }

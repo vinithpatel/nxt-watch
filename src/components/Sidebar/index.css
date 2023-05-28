@@ -1,0 +1,22 @@
+.contact-us-card {
+  width: 100%;
+  padding: 10px;
+}
+
+.side-bar-nav-items-container {
+  padding-left: 0px;
+  list-style-type: none;
+
+  width: 100%;
+}
+
+.side-bar-social-media-icons-card {
+  display: flex;
+  align-items: center;
+}
+
+.side-bar-social-media-icon {
+  height: 26px;
+  width: 26px;
+  margin-right: 10px;
+}

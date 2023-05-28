@@ -53,7 +53,7 @@ const MenuPopup = props => (
                 >
                   <Link className="nav-link" to="/">
                     <NavItemLogo
-                      isActive={path === '/trending'}
+                      isActive={path === '/'}
                       isLightThemeActive={isLightThemeActive}
                     >
                       <AiFillHome />
@@ -87,7 +87,7 @@ const MenuPopup = props => (
                 >
                   <Link className="nav-link" to="/gaming">
                     <NavItemLogo
-                      isActive={path === '/trending'}
+                      isActive={path === '/gaming'}
                       isLightThemeActive={isLightThemeActive}
                     >
                       <GiGamepad />
@@ -104,7 +104,7 @@ const MenuPopup = props => (
                 >
                   <Link className="nav-link" to="/saved-videos">
                     <NavItemLogo
-                      isActive={path === '/trending'}
+                      isActive={path === '/saved-videos'}
                       isLightThemeActive={isLightThemeActive}
                     >
                       <RiPlayListAddFill />
