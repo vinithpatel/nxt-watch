@@ -3,25 +3,50 @@ import styled from 'styled-components'
 export const HomeContainer = styled.div`
   background-color: ${props =>
     props.isLightThemeActive ? '#f9f9f9' : ' #0f0f0f '};
-
-  height: 100%;
-  padding: 20px;
+  min-height: 70vh;
+  @media (min-width: 576px) {
+    padding: 20px;
+  }
 `
 export const InputCard = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
+
+  width: 100vw;
+  padding: 20px 20px 0px 20px;
 
   @media (min-width: 576px) {
     width: 300px;
+    padding: 0px;
   }
 `
 export const SearchInput = styled.input`
   width: 100%;
   height: 28px;
+
+  background-color: ${props =>
+    props.isLightThemeActive ? ' #e2e8f0' : ' #181818'};
+
+  border-width: 1px;
+  border-color: ${props =>
+    props.isLightThemeActive ? ' #f1f5f9 ' : ' #f1f1f1'};
+
+  outline: none;
+
+  color: ${props => (props.isLightThemeActive ? '#64748b' : ' #94a3b8')};
 `
 
 export const SearchButton = styled.button`
   width: 70px;
   height: 28px;
+
+  cursor: pointer;
+  outline: none;
+
+  background-color: ${props =>
+    props.isLightThemeActive ? ' #f1f1f1' : '#7e858e'};
+
+  border-width: 1px;
+  border-color: ${props =>
+    props.isLightThemeActive ? ' #f1f5f9 ' : ' #64748b'};
 `
