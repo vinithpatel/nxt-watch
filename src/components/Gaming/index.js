@@ -71,6 +71,10 @@ class Gaming extends Component {
     }
   }
 
+  onClickRetry = () => {
+    this.getGamingVideos()
+  }
+
   renderLoadingView = () => (
     <div className="loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#3b82f6" height="50" width="50" />

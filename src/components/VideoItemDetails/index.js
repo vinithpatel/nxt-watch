@@ -2,6 +2,7 @@ import {Component} from 'react'
 import {AiFillFire} from 'react-icons/ai'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
+import ReactPlayer from 'react-player'
 
 import ThemeContext from '../../context/ThemeContext'
 import Navbar from '../Navbar'
@@ -9,12 +10,11 @@ import Sidebar from '../Sidebar'
 import TrendingVideoItem from '../TrendingVideoItem'
 
 import {
-  TrendingContainer,
-  Banner,
-  BannerLogo,
-  BannerHeading,
-  NoVideosHeading,
-  NoVidesPara,
+  VideoDetailsContainer,
+  VideoItemTitle,
+  ViewCount,
+  Dot,
+  Published,
 } from './styledComponents'
 import './index.css'
 
@@ -25,35 +25,41 @@ const apiStatusConstants = {
   failure: 'FAIL',
 }
 
-class Trending extends Component {
+class VideoItemDetails extends Component {
   state = {
     apiStatus: apiStatusConstants.initial,
-    trendingVideos: [],
+    videoDetailsObj: {},
   }
 
   componentDidMount() {
-    this.getTrendingVideos()
+    this.getVideoDetails()
   }
 
-  getCamelCaseData = videosArray =>
-    videosArray.map(eachObj => ({
-      id: eachObj.id,
-      title: eachObj.title,
-      thumbnailUrl: eachObj.thumbnail_url,
-      channel: {
-        name: eachObj.channel.name,
-        profileImageUrl: eachObj.channel.profile_image_url,
-      },
-      viewCount: eachObj.view_count,
-      publishedAt: eachObj.published_at,
-    }))
+  getCamelCaseData = data => ({
+    id: data.video_details.id,
+    title: data.video_details.title,
+    videoUrl: data.video_details.video_url,
+    thumbnailUrl: data.video_details.thumbnail_url,
+    channel: {
+      name: data.video_details.channel.name,
+      profileImageUrl: data.video_details.channel.profile_image_url,
+      subscriberCount: data.video_details.channel.subscriber_count,
+    },
+    viewCount: data.video_details.view_count,
+    publishedAt: data.video_details.published_at,
+    description: data.video_details.description,
+  })
 
-  getTrendingVideos = async () => {
+  getVideoDetails = async () => {
     this.setState({apiStatus: apiStatusConstants.progress})
 
     const jwtToken = Cookies.get('jwt_token')
 
-    const apiUrl = 'https://apis.ccbp.in/videos/trending'
+    const {match} = this.props
+    const {params} = match
+    const {id} = params
+
+    const apiUrl = `https://apis.ccbp.in/videos/${id}`
 
     const requestConfig = {
       method: 'GET',
@@ -65,10 +71,10 @@ class Trending extends Component {
     const response = await fetch(apiUrl, requestConfig)
     if (response.ok) {
       const data = await response.json()
-      const formatedData = this.getCamelCaseData(data.videos)
+      const formatedData = this.getCamelCaseData(data)
       this.setState({
         apiStatus: apiStatusConstants.success,
-        trendingVideos: formatedData,
+        videoDetailsObj: formatedData,
       })
     }
   }
@@ -83,19 +89,65 @@ class Trending extends Component {
     </div>
   )
 
-  renderTrendingVideos = () => {
-    const {trendingVideos} = this.state
+  renderVideoDetails = () => {
+    const {videoDetailsObj} = this.state
+
+    const {
+      id,
+      title,
+      videoUrl,
+      thumbnailUrl,
+      channel,
+      viewCount,
+      publishedAt,
+      description,
+    } = videoDetailsObj
+
+    const {name, profileImageUrl, subscriberCount} = channel
 
     return (
-      <ul className="list-of-trending-videos">
-        {trendingVideos.map(eachObj => (
-          <TrendingVideoItem key={eachObj.id} videoItemDetails={eachObj} />
-        ))}
-      </ul>
+      <ThemeContext.Consumer>
+        {value => {
+          const {activeTheme} = value
+
+          const isLightThemeActive = activeTheme === 'LIGHT'
+
+          return (
+            <>
+              <div className="video-player-container">
+                <ReactPlayer
+                  className="video-player"
+                  url={videoUrl}
+                  controls
+                  volume
+                />
+              </div>
+              <div className="video-details-bottom-card">
+                <div className="video-title-card">
+                  <VideoItemTitle isLightThemeActive={isLightThemeActive}>
+                    {title}
+                  </VideoItemTitle>
+                  <div className="video-reviews-card">
+                    <div className="video-reviews-left-card">
+                      <ViewCount isLightThemeActive={isLightThemeActive}>
+                        {viewCount}
+                      </ViewCount>
+                      <Dot isLightThemeActive={isLightThemeActive} />
+                      <Published isLightThemeActive={isLightThemeActive}>
+                        {publishedAt}
+                      </Published>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          )
+        }}
+      </ThemeContext.Consumer>
     )
   }
 
-  renderFailureView = () => (
+  /*  renderFailureView = () => (
     <ThemeContext.Consumer>
       {value => {
         const {activeTheme} = value
@@ -136,7 +188,7 @@ class Trending extends Component {
         )
       }}
     </ThemeContext.Consumer>
-  )
+  )  */
 
   renderResources = () => {
     const {apiStatus} = this.state
@@ -145,7 +197,7 @@ class Trending extends Component {
       case apiStatusConstants.progress:
         return this.renderLoadingView()
       case apiStatusConstants.success:
-        return this.renderTrendingVideos()
+        return this.renderVideoDetails()
       case apiStatusConstants.failure:
         return this.renderFailureView()
       default:
@@ -163,22 +215,14 @@ class Trending extends Component {
           return (
             <>
               <Navbar />
-              <div className="trending-bg-container">
+              <div className="video-details-bg-container">
                 <Sidebar />
-                <TrendingContainer
+                <VideoDetailsContainer
                   isLightThemeActive={isLightThemeActive}
-                  data-testid="trending"
+                  data-testid="videoItemDetails"
                 >
-                  <Banner isLightThemeActive={isLightThemeActive}>
-                    <BannerLogo isLightThemeActive={isLightThemeActive}>
-                      <AiFillFire />
-                    </BannerLogo>
-                    <BannerHeading isLightThemeActive={isLightThemeActive}>
-                      Trending
-                    </BannerHeading>
-                  </Banner>
                   {this.renderResources()}
-                </TrendingContainer>
+                </VideoDetailsContainer>
               </div>
             </>
           )
@@ -188,4 +232,4 @@ class Trending extends Component {
   }
 }
 
-export default Trending
+export default VideoItemDetails
