@@ -91,3 +91,37 @@
     flex-wrap: wrap;
   }
 }
+
+.no-videos-view {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-videos-img {
+  width: 60%;
+}
+@media (min-width: 768px) {
+  .no-videos-img {
+    width: 350px;
+  }
+}
+
+.retry-button {
+  height: 35px;
+  width: 80px;
+
+  border-width: 0px;
+  background-color: #3b82f6;
+
+  border-radius: 5px;
+
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-weight: 500;
+
+  cursor: pointer;
+  outline: none;
+}

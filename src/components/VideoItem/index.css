@@ -60,3 +60,8 @@
     display: none;
   }
 }
+
+.video-link {
+  text-decoration: none;
+  width: 100%;
+}

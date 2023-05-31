@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
   background-color: ${props =>
-    props.isLightThemeActive ? '#f9f9f9' : ' #0f0f0f '};
+    props.isLightThemeActive ? '#f9f9f9' : ' #181818 '};
   min-height: 70vh;
   @media (min-width: 576px) {
     padding: 20px;
@@ -49,4 +49,17 @@ export const SearchButton = styled.button`
   border-width: 1px;
   border-color: ${props =>
     props.isLightThemeActive ? ' #f1f5f9 ' : ' #64748b'};
+`
+
+export const NoVideosHeading = styled.h1`
+  font-family: 'Roboto';
+  color: ${props => (props.isLightThemeActive ? ' #181818' : '#e2e8f0')};
+
+  font-size: 25px;
+`
+export const NoVidesPara = styled.p`
+  font-family: 'Roboto';
+  color: ${props => (props.isLightThemeActive ? ' #181818' : '#e2e8f0')};
+
+  font-size: 16px;
 `

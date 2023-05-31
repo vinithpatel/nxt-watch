@@ -1,5 +1,5 @@
 import {FaMoon} from 'react-icons/fa'
-import {GiHamburgerMenu} from 'react-icons/gi'
+
 import {FiLogOut, FiSun} from 'react-icons/fi'
 
 import ThemeContext from '../../context/ThemeContext'
@@ -52,6 +52,7 @@ const Navbar = () => (
               <NavButton
                 isLightThemeActive={isLightThemeActive}
                 onClick={onClickMoonButton}
+                data-testid="theme"
               >
                 <FaMoon />
               </NavButton>
@@ -60,6 +61,7 @@ const Navbar = () => (
               <NavButton
                 isLightThemeActive={isLightThemeActive}
                 onClick={onClickSunButton}
+                data-testid="theme"
               >
                 <FiSun />
               </NavButton>

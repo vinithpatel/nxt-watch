@@ -1,7 +1,7 @@
 import {Link, withRouter} from 'react-router-dom'
 
-import {GiHamburgerMenu, GiGamepad} from 'react-icons/gi'
-import {AiOutlineClose, AiFillHome, AiFillFire} from 'react-icons/ai'
+import {GiGamepad} from 'react-icons/gi'
+import {AiFillHome, AiFillFire} from 'react-icons/ai'
 
 import {RiPlayListAddFill} from 'react-icons/ri'
 

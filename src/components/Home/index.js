@@ -12,6 +12,8 @@ import {
   InputCard,
   SearchInput,
   SearchButton,
+  NoVideosHeading,
+  NoVidesPara,
 } from './styledComponents'
 import ThemeContext from '../../context/ThemeContext'
 
@@ -91,15 +93,20 @@ class Home extends Component {
     this.getVideos()
   }
 
+  onClickRetry = () => {
+    this.getVideos()
+  }
+
   renderGetPremiumView = () => (
-    <div className="premium-view-container">
+    <div className="premium-view-container" data-testid="banner">
       <div className="premium-view-logo-card">
         <img
           className="premium-view-website-logo"
           src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-          alt="website logo"
+          alt="nxt watch logo"
         />
         <button
+          type="button"
           className="premium-view-cancel-button"
           onClick={this.onClickCancelPremiumButton}
         >
@@ -122,8 +129,45 @@ class Home extends Component {
     </div>
   )
 
+  renderNovideosView = () => (
+    <ThemeContext.Consumer>
+      {value => {
+        const {activeTheme} = value
+
+        const isLightThemeActive = activeTheme === 'LIGHT'
+
+        return (
+          <div className="no-videos-view">
+            <img
+              className="no-videos-img"
+              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-search-results-img.png"
+              alt="no videos"
+            />
+            <NoVideosHeading isLightThemeActive={isLightThemeActive}>
+              No Search results found
+            </NoVideosHeading>
+            <NoVidesPara isLightThemeActive={isLightThemeActive}>
+              Try different words or remove search filter
+            </NoVidesPara>
+            <button
+              type="button"
+              className="retry-button"
+              onClick={this.onClickRetry}
+            >
+              Retry
+            </button>
+          </div>
+        )
+      }}
+    </ThemeContext.Consumer>
+  )
+
   renderVideosView = () => {
     const {videos} = this.state
+
+    if (videos.length === 0) {
+      return this.renderNovideosView()
+    }
 
     return (
       <ul className="list-videos">
@@ -133,6 +177,49 @@ class Home extends Component {
       </ul>
     )
   }
+
+  renderFailureView = () => (
+    <ThemeContext.Consumer>
+      {value => {
+        const {activeTheme} = value
+
+        const isLightThemeActive = activeTheme === 'LIGHT'
+
+        return (
+          <div className="no-videos-view">
+            {isLightThemeActive && (
+              <img
+                className="no-videos-img"
+                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png"
+                alt="faiure"
+              />
+            )}
+            {!isLightThemeActive && (
+              <img
+                className="no-videos-img"
+                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png"
+                alt="faiure"
+              />
+            )}
+            <NoVideosHeading isLightThemeActive={isLightThemeActive}>
+              Opps! Something Went Wrong
+            </NoVideosHeading>
+            <NoVidesPara isLightThemeActive={isLightThemeActive}>
+              We are having some trouble to complete your request. Please try
+              again.
+            </NoVidesPara>
+            <button
+              type="button"
+              className="retry-button"
+              onClick={this.onClickRetry}
+            >
+              Retry
+            </button>
+          </div>
+        )
+      }}
+    </ThemeContext.Consumer>
+  )
 
   renderVideosResources = () => {
     const {apiStatus} = this.state
@@ -162,7 +249,10 @@ class Home extends Component {
                 <Sidebar />
                 <div className="home-container">
                   {isPremiumShow && this.renderGetPremiumView()}
-                  <HomeContainer isLightThemeActive={isLightThemeActive}>
+                  <HomeContainer
+                    isLightThemeActive={isLightThemeActive}
+                    data-testid="home"
+                  >
                     <InputCard isLightThemeActive={isLightThemeActive}>
                       <SearchInput
                         type="search"
@@ -171,9 +261,11 @@ class Home extends Component {
                         value={searchInput}
                         onChange={this.onChangeInput}
                       />
+
                       <SearchButton
                         isLightThemeActive={isLightThemeActive}
                         onClick={this.onClickSearch}
+                        data-testid="searchButton"
                       >
                         <AiOutlineSearch />
                       </SearchButton>

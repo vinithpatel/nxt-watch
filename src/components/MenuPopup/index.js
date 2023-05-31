@@ -41,6 +41,7 @@ const MenuPopup = props => (
           {close => (
             <MenuPopupContainer isLightThemeActive={isLightThemeActive}>
               <NavButton
+                data-testid="close"
                 isLightThemeActive={isLightThemeActive}
                 onClick={close}
               >
