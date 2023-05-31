@@ -57,7 +57,9 @@ export const NavItemName = styled.h1`
   color: ${props => (props.isLightThemeActive ? ' #0f0f0f' : ' #f9f9f9')};
 `
 
-export const Heading = styled(NavItemName)`
+export const Heading = styled.p`
+  color: ${props => (props.isLightThemeActive ? ' #0f0f0f' : ' #f9f9f9')};
+  font-size: 16px;
   font-weight: 600;
   margin-left: 0px;
 `

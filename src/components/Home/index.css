@@ -13,15 +13,6 @@
   overflow-y: auto;
 }
 
-.premium-view-container {
-  height: 200px;
-  width: 100%;
-  padding: 20px;
-
-  background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png');
-  background-size: cover;
-}
-
 .premium-view-website-logo {
   height: 30px;
 }

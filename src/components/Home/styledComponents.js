@@ -63,3 +63,11 @@ export const NoVidesPara = styled.p`
 
   font-size: 16px;
 `
+export const Banner = styled.div`
+  height: 200px;
+  width: 100%;
+  padding: 20px;
+
+  background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png');
+  background-size: cover;
+`

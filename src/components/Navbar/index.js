@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import {FaMoon} from 'react-icons/fa'
 
 import {FiLogOut, FiSun} from 'react-icons/fi'
@@ -33,19 +34,21 @@ const Navbar = () => (
 
       return (
         <NavBar isLightThemeActive={isLightThemeActive}>
-          {isLightThemeActive && (
-            <WebsiteLogo
-              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-              alt="website logo"
-            />
-          )}
+          <Link to="/">
+            {isLightThemeActive && (
+              <WebsiteLogo
+                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
+                alt="website logo"
+              />
+            )}
 
-          {!isLightThemeActive && (
-            <WebsiteLogo
-              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png"
-              alt="website logo"
-            />
-          )}
+            {!isLightThemeActive && (
+              <WebsiteLogo
+                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png"
+                alt="website logo"
+              />
+            )}
+          </Link>
 
           <MenuContainer>
             {isLightThemeActive && (

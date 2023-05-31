@@ -1,0 +1,21 @@
+.gaming-video-item-container {
+  width: 44%;
+  margin-right: 10px;
+
+  height: 70%;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .gaming-video-item-container {
+    margin-right: 15px;
+    width: 30%;
+    height: 70%;
+  }
+}
+.gaming-video-item-img {
+  width: 100%;
+}
+.gaming-video-item-bottom-card {
+  margin-top: 10px;
+}

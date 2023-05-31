@@ -14,6 +14,7 @@ import {
   SearchButton,
   NoVideosHeading,
   NoVidesPara,
+  Banner,
 } from './styledComponents'
 import ThemeContext from '../../context/ThemeContext'
 
@@ -98,7 +99,7 @@ class Home extends Component {
   }
 
   renderGetPremiumView = () => (
-    <div className="premium-view-container" data-testid="banner">
+    <Banner data-testid="banner">
       <div className="premium-view-logo-card">
         <img
           className="premium-view-website-logo"
@@ -109,6 +110,7 @@ class Home extends Component {
           type="button"
           className="premium-view-cancel-button"
           onClick={this.onClickCancelPremiumButton}
+          data-testid="close"
         >
           <AiOutlineClose />
         </button>
@@ -120,7 +122,7 @@ class Home extends Component {
       <button type="button" className="get-it-button">
         GET IT NOW
       </button>
-    </div>
+    </Banner>
   )
 
   renderLoadingView = () => (
@@ -147,7 +149,7 @@ class Home extends Component {
               No Search results found
             </NoVideosHeading>
             <NoVidesPara isLightThemeActive={isLightThemeActive}>
-              Try different words or remove search filter
+              Try different key words or remove search filter
             </NoVidesPara>
             <button
               type="button"
