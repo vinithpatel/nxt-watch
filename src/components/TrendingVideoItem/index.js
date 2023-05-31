@@ -1,17 +1,17 @@
 import {Link} from 'react-router-dom'
 
-import ThemeContext from '../../context/ThemeContext'
-
 import {
   VideoItemTitle,
   ChannelName,
+  Dot,
   ViewCount,
   Published,
-  Dot,
 } from './styledComponents'
+import ThemeContext from '../../context/ThemeContext'
+
 import './index.css'
 
-const VideoItem = props => {
+const TrendingVideoItem = props => {
   const {videoItemDetails} = props
   const {
     id,
@@ -31,15 +31,15 @@ const VideoItem = props => {
         const isLightThemeActive = activeTheme === 'LIGHT'
 
         return (
-          <li className="video-item-container">
-            <Link to={`/videos/${id}`} className="video-link">
+          <Link className="video-link" to={`/videos/${id}`}>
+            <li className="trending-video-item">
               <img
-                className="video-item-img"
+                className="trending-video-img"
                 src={thumbnailUrl}
                 alt="video thumbnail"
               />
               <div className="video-item-bottom-card">
-                <div className="channel-log-card">
+                <div className="trending-channel-log-card">
                   <img
                     className="channel-logo"
                     src={profileImageUrl}
@@ -61,24 +61,24 @@ const VideoItem = props => {
                       <ChannelName isLightThemeActive={isLightThemeActive}>
                         {name}
                       </ChannelName>
-                      <Dot isLightThemeActive={isLightThemeActive} />
+                      <Dot isLightThemeActive={isLightThemeActive}>.</Dot>
                     </div>
                     <ViewCount isLightThemeActive={isLightThemeActive}>
                       {viewCount}
                     </ViewCount>
-                    <Dot isLightThemeActive={isLightThemeActive}>.</Dot>
+                    <Dot isLightThemeActive={isLightThemeActive} />
                     <Published isLightThemeActive={isLightThemeActive}>
                       {publishedAt}
                     </Published>
                   </div>
                 </div>
               </div>
-            </Link>
-          </li>
+            </li>
+          </Link>
         )
       }}
     </ThemeContext.Consumer>
   )
 }
 
-export default VideoItem
+export default TrendingVideoItem

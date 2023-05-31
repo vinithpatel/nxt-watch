@@ -1,0 +1,34 @@
+.trending-video-item {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .trending-video-item {
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+}
+
+.trending-video-img {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .trending-video-img {
+    width: 300px;
+  }
+}
+
+.trending-channel-log-card {
+}
+
+@media (min-width: 576px) {
+  .trending-channel-log-card {
+    display: none;
+  }
+}

@@ -229,6 +229,8 @@ class Home extends Component {
         return this.renderLoadingView()
       case apiStatusConstants.success:
         return this.renderVideosView()
+      case apiStatusConstants.failure:
+        return this.renderFailureView()
       default:
         return null
     }

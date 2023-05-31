@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const SidebarContainer = styled.div`
   width: 220px;
-  height: 100%;
+  height: 91vh;
 
   padding: 20px 0px 20px 0px;
 
@@ -14,7 +14,7 @@ export const SidebarContainer = styled.div`
   font-family: 'Roboto';
 
   background-color: ${props =>
-    props.isLightThemeActive ? '#f9f9f9' : '#0f0f0f'};
+    props.isLightThemeActive ? '#ffffff' : '#181818'};
 
   @media (max-width: 767px) {
     display: none;

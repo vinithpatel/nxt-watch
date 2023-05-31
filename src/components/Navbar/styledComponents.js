@@ -4,7 +4,7 @@ export const NavBar = styled.nav`
   height: 60px;
   width: 100vw;
   background-color: ${props =>
-    props.isLightThemeActive ? '#f9f9f9' : ' #181818'};
+    props.isLightThemeActive ? '#ffffff' : ' #181818'};
 
   display: flex;
   justify-content: space-between;

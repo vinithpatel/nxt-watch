@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
   background-color: ${props =>
-    props.isLightThemeActive ? '#f9f9f9' : ' #181818 '};
-  min-height: 70vh;
+    props.isLightThemeActive ? '#f9f9f9' : ' #0f0f0f '};
+  min-height: 60vh;
   @media (min-width: 576px) {
     padding: 20px;
   }
@@ -25,7 +25,7 @@ export const SearchInput = styled.input`
   height: 28px;
 
   background-color: ${props =>
-    props.isLightThemeActive ? ' #e2e8f0' : ' #181818'};
+    props.isLightThemeActive ? ' #ffffff' : ' #181818'};
 
   border-width: 1px;
   border-color: ${props =>

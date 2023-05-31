@@ -9,7 +9,7 @@ export const VideoItemTitle = styled.h1`
   color: ${props => (props.isLightThemeActive ? '#000000' : '#ffffff')};
 
   @media (min-width: 768px) {
-    font-size: 12px;
+    font-size: 16px;
   }
 `
 
@@ -22,7 +22,7 @@ export const ChannelName = styled.p`
   margin-bottom: 0px;
 
   @media (min-width: 768px) {
-    font-size: 9px;
+    font-size: 12px;
   }
 `
 
