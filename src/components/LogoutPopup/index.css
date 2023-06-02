@@ -1,0 +1,22 @@
+.popup-content {
+  width: 80%;
+  padding: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .popup-content {
+    width: 350px;
+  }
+}
+.cancel-confirm-button-card {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}

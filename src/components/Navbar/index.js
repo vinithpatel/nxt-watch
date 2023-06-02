@@ -5,6 +5,7 @@ import {FiLogOut, FiSun} from 'react-icons/fi'
 
 import ThemeContext from '../../context/ThemeContext'
 import MenuPopup from '../MenuPopup'
+import LogoutPopup from '../LogoutPopup'
 
 import {
   NavBar,
@@ -72,21 +73,30 @@ const Navbar = () => (
             <MobileContainer>
               <MenuPopup />
 
-              <NavButton isLightThemeActive={isLightThemeActive}>
-                <FiLogOut />
-              </NavButton>
+              <LogoutPopup
+                triggerButton={
+                  <NavButton isLightThemeActive={isLightThemeActive}>
+                    <FiLogOut />
+                  </NavButton>
+                }
+              />
             </MobileContainer>
             <TabletContainer>
               <ProfileImg
                 src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
                 alt="profile"
               />
-              <LogoutButton
-                type="button"
-                isLightThemeActive={isLightThemeActive}
-              >
-                Logout
-              </LogoutButton>
+
+              <LogoutPopup
+                triggerButton={
+                  <LogoutButton
+                    type="button"
+                    isLightThemeActive={isLightThemeActive}
+                  >
+                    Logout
+                  </LogoutButton>
+                }
+              />
             </TabletContainer>
           </MenuContainer>
         </NavBar>
