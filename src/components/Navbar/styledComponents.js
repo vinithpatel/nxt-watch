@@ -30,7 +30,7 @@ export const MobileContainer = styled(MenuContainer)`
   }
 `
 export const TabletContainer = styled(MenuContainer)`
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `
