@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
   background-color: ${props =>
-    props.isLightThemeActive ? '#f9f9f9' : ' #0f0f0f '};
+    props.isLightThemeActive ? '#f9f9f9' : ' #181818 '};
   min-height: 60vh;
   @media (min-width: 576px) {
     padding: 20px;

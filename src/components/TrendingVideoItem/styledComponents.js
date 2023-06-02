@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const VideoItemTitle = styled.h1`
+export const VideoItemTitle = styled.p`
   font-family: 'Roboto';
   font-size: 16px;
   font-weight: 400;

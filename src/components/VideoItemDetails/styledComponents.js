@@ -12,7 +12,7 @@ export const VideoDetailsContainer = styled.div`
 
   overflow-y: auto;
 `
-export const VideoItemTitle = styled.h1`
+export const VideoItemTitle = styled.p`
   font-family: 'Roboto';
   font-size: 16px;
   font-weight: 400;
@@ -57,9 +57,8 @@ export const Button = styled.button`
   font-weight: 500;
   color: ${props => (props.isLightThemeActive ? '#64748b' : ' #94a3b8')};
   margin-right: 10px;
-  color: ${props => (props.isLightThemeActive ? '#64748b' : ' #94a3b8')};
 
-  color: ${props => (props.isActive ? '  #3b82f6' : '')};
+  color: ${props => (props.isActive ? '  #2563eb' : '')};
 
   display: flex;
   align-items: center;

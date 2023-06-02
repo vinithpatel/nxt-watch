@@ -128,7 +128,7 @@ class SavedVideos extends Component {
                 <Sidebar />
                 <TrendingContainer
                   isLightThemeActive={isLightThemeActive}
-                  data-testid="saved-videos"
+                  data-testid="savedVideos"
                 >
                   <Banner isLightThemeActive={isLightThemeActive}>
                     <BannerLogo isLightThemeActive={isLightThemeActive}>

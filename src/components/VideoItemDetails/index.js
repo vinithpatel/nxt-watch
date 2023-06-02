@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {AiFillFire} from 'react-icons/ai'
+
 import {BiLike, BiDislike} from 'react-icons/bi'
 import {RiPlayListAddFill} from 'react-icons/ri'
 
@@ -10,7 +10,7 @@ import ReactPlayer from 'react-player'
 import ThemeContext from '../../context/ThemeContext'
 import Navbar from '../Navbar'
 import Sidebar from '../Sidebar'
-import TrendingVideoItem from '../TrendingVideoItem'
+
 import Published from '../Published'
 
 import {
@@ -191,10 +191,9 @@ class VideoItemDetails extends Component {
     const {videoDetailsObj, isLiked, isDisliked, isSaved} = this.state
 
     const {
-      id,
       title,
       videoUrl,
-      thumbnailUrl,
+
       channel,
       viewCount,
       publishedAt,
@@ -206,7 +205,7 @@ class VideoItemDetails extends Component {
     return (
       <ThemeContext.Consumer>
         {value => {
-          const {activeTheme, formatedPublishTime} = value
+          const {activeTheme} = value
 
           const isLightThemeActive = activeTheme === 'LIGHT'
 
@@ -272,7 +271,7 @@ class VideoItemDetails extends Component {
                   <img
                     className="channel-img"
                     src={profileImageUrl}
-                    alt={name}
+                    alt="channel logo"
                   />
                   <div className="channel-desc-card">
                     <ChannelName isLightThemeActive={isLightThemeActive}>
@@ -307,14 +306,14 @@ class VideoItemDetails extends Component {
               <img
                 className="no-videos-img"
                 src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png"
-                alt="faiure"
+                alt="failure view"
               />
             )}
             {!isLightThemeActive && (
               <img
                 className="no-videos-img"
                 src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png"
-                alt="faiure"
+                alt="failure view"
               />
             )}
             <FailureHeading isLightThemeActive={isLightThemeActive}>

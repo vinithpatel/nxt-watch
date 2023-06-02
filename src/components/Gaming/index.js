@@ -106,14 +106,14 @@ class Gaming extends Component {
               <img
                 className="no-videos-img"
                 src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png"
-                alt="faiure"
+                alt="failure view"
               />
             )}
             {!isLightThemeActive && (
               <img
                 className="no-videos-img"
                 src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png"
-                alt="faiure"
+                alt="failure view"
               />
             )}
             <FailureHeading isLightThemeActive={isLightThemeActive}>
@@ -163,7 +163,10 @@ class Gaming extends Component {
               <Navbar />
               <div className="gaming-bg-container">
                 <Sidebar />
-                <GamignContainer isLightThemeActive={isLightThemeActive}>
+                <GamignContainer
+                  isLightThemeActive={isLightThemeActive}
+                  data-testid="gaming"
+                >
                   <Banner isLightThemeActive={isLightThemeActive}>
                     <BannerLogo isLightThemeActive={isLightThemeActive}>
                       <GiGamepad />

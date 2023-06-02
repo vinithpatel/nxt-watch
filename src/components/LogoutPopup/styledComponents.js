@@ -15,7 +15,7 @@ export const LogoutPopupContainer = styled.div`
   border-radius: 10px;
 `
 
-export const LogoutHeading = styled.h1`
+export const LogoutHeading = styled.p`
   font-size: 18px;
   font-family: 'Roboto';
   font-weight: 500;

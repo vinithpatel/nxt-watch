@@ -28,14 +28,14 @@ const NotFound = () => (
                 <img
                   className="no-videos-img"
                   src="https://assets.ccbp.in/frontend/react-js/nxt-watch-not-found-light-theme-img.png"
-                  alt="no saved videos"
+                  alt="not found"
                 />
               )}
               {!isLightThemeActive && (
                 <img
                   className="no-videos-img"
                   src="https://assets.ccbp.in/frontend/react-js/nxt-watch-not-found-dark-theme-img.png"
-                  alt="no saved videos"
+                  alt="not found"
                 />
               )}
 

@@ -21,7 +21,7 @@ export const SidebarContainer = styled.div`
   }
 `
 
-export const NavItem = styled.div`
+export const NavItem = styled.li`
   width: 100%;
 
   display: flex;

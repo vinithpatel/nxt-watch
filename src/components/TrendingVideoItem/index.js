@@ -21,7 +21,7 @@ const TrendingVideoItem = props => {
   return (
     <ThemeContext.Consumer>
       {value => {
-        const {activeTheme, formatedPublishTime} = value
+        const {activeTheme} = value
 
         const isLightThemeActive = activeTheme === 'LIGHT'
 
