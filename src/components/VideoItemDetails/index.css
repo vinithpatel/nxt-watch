@@ -10,17 +10,32 @@
   width: 100%;
   padding-top: 20px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  align-items: center;
+.video-title-card {
+  width: 100%;
 }
 
 .video-player {
   width: 100% !important ;
 }
 
+.video-reviews-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (min-width: 880px) {
   .video-player {
     width: 640px !important ;
+  }
+
+  .video-title-card {
+    width: 640px;
   }
 }
 
@@ -34,4 +49,27 @@
 .video-reviews-left-card {
   display: flex;
   align-items: center;
+}
+
+.like-icon {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.video-details-bottom-card {
+  margin-top: 20px;
+}
+
+.channel-card {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.channel-img {
+  height: 40px;
+}
+
+.channel-desc-card {
+  margin-left: 10px;
 }

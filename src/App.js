@@ -8,6 +8,8 @@ import Home from './components/Home'
 import Trending from './components/Trending'
 import Gaming from './components/Gaming'
 import VideoItemDetails from './components/VideoItemDetails'
+import SavedVideos from './components/SavedVideos'
+import NotFound from './components/NotFound'
 
 import './App.css'
 
@@ -44,6 +46,9 @@ class App extends Component {
             path="/videos/:id"
             component={VideoItemDetails}
           />
+          <ProtectedRoute exact path="/saved-videos" component={SavedVideos} />
+          <ProtectedRoute exact path="/not-found" component={NotFound} />
+          <Redirect to="/not-found" />
         </Switch>
       </ThemeContext.Provider>
     )

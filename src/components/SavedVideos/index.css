@@ -1,0 +1,30 @@
+.trending-bg-container {
+  display: flex;
+  align-items: flex-start;
+
+  height: 91vh;
+  width: 100%;
+}
+
+.list-of-trending-videos {
+  list-style-type: none;
+  padding: 0px;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 576px) {
+  .list-of-trending-videos {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .list-of-trending-videos {
+    padding: 40px;
+  }
+}

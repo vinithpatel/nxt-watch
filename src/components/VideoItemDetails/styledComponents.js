@@ -48,3 +48,52 @@ export const Dot = styled.div`
 
   margin-right: 10px;
 `
+
+export const Button = styled.button`
+  border-width: 0px;
+
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 500;
+  color: ${props => (props.isLightThemeActive ? '#64748b' : ' #94a3b8')};
+  margin-right: 10px;
+  color: ${props => (props.isLightThemeActive ? '#64748b' : ' #94a3b8')};
+
+  color: ${props => (props.isActive ? '  #3b82f6' : '')};
+
+  display: flex;
+  align-items: center;
+
+  background-color: transparent;
+
+  cursor: pointer;
+  outline: none;
+`
+
+export const HarizentalRule = styled.hr`
+  width: 100%;
+  background-color: ${props =>
+    props.isLightThemeActive ? '#64748b' : ' #94a3b8'};
+  height: 1px;
+  border: none;
+`
+export const ChannelName = styled(ViewCount)`
+  color: ${props => (props.isLightThemeActive ? '#000000' : ' #ffffff')};
+  margin-bottom: 5px;
+`
+export const Description = styled(ViewCount)`
+  margin-top: 20px;
+`
+
+export const FailureHeading = styled.h1`
+  font-family: 'Roboto';
+  color: ${props => (props.isLightThemeActive ? ' #181818' : '#e2e8f0')};
+
+  font-size: 25px;
+`
+export const FailurePara = styled.p`
+  font-family: 'Roboto';
+  color: ${props => (props.isLightThemeActive ? ' #181818' : '#e2e8f0')};
+
+  font-size: 16px;
+`
