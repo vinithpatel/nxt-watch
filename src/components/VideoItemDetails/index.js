@@ -11,13 +11,13 @@ import ThemeContext from '../../context/ThemeContext'
 import Navbar from '../Navbar'
 import Sidebar from '../Sidebar'
 import TrendingVideoItem from '../TrendingVideoItem'
+import Published from '../Published'
 
 import {
   VideoDetailsContainer,
   VideoItemTitle,
   ViewCount,
   Dot,
-  Published,
   Button,
   HarizentalRule,
   ChannelName,
@@ -206,7 +206,7 @@ class VideoItemDetails extends Component {
     return (
       <ThemeContext.Consumer>
         {value => {
-          const {activeTheme} = value
+          const {activeTheme, formatedPublishTime} = value
 
           const isLightThemeActive = activeTheme === 'LIGHT'
 

@@ -1,14 +1,9 @@
 import {Link} from 'react-router-dom'
 
 import ThemeContext from '../../context/ThemeContext'
+import Published from '../Published'
 
-import {
-  VideoItemTitle,
-  ChannelName,
-  ViewCount,
-  Published,
-  Dot,
-} from './styledComponents'
+import {VideoItemTitle, ChannelName, ViewCount, Dot} from './styledComponents'
 import './index.css'
 
 const VideoItem = props => {

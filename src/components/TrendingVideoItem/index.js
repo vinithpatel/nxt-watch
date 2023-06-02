@@ -1,12 +1,7 @@
 import {Link} from 'react-router-dom'
+import Published from '../Published'
 
-import {
-  VideoItemTitle,
-  ChannelName,
-  Dot,
-  ViewCount,
-  Published,
-} from './styledComponents'
+import {VideoItemTitle, ChannelName, Dot, ViewCount} from './styledComponents'
 import ThemeContext from '../../context/ThemeContext'
 
 import './index.css'
@@ -26,7 +21,7 @@ const TrendingVideoItem = props => {
   return (
     <ThemeContext.Consumer>
       {value => {
-        const {activeTheme} = value
+        const {activeTheme, formatedPublishTime} = value
 
         const isLightThemeActive = activeTheme === 'LIGHT'
 
